@@ -10,21 +10,21 @@ body {
 header {
     background-color: #2c3e50;
     color: white;
-    padding: 10px 0; /* Ajusta el espacio de arriba y abajo */
-    text-align: center; /* Centra el contenido dentro del header */
+    padding: 10px 0;
+    text-align: center;
 }
 
 header img {
-    width: 50px; /* Tamaño más pequeño del logo */
-    height: auto; /* Mantiene las proporciones del logo */
-    display: inline-block; /* Asegura que el logo se muestre de forma en línea */
-    margin-bottom: 15px; /* Agrega un espacio entre el logo y el título */
+    width: 50px;
+    height: auto;
+    display: inline-block;
+    margin-bottom: 15px;
 }
 
 header h1 {
     font-size: 2em;
-    margin-top: 0; /* Elimina el margen superior para alinear el título con el logo */
-    margin-bottom: 0; /* Elimina el margen inferior */
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 /* Menú de navegación */
@@ -51,7 +51,6 @@ nav ul li a {
     font-size: 1.2em;
 }
 
-/* Efecto hover en los enlaces del menú */
 nav ul li a:hover {
     color: #ecf0f1;
 }
@@ -65,24 +64,22 @@ section {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo para la sección de inicio */
 #inicio {
     padding: 20px;
     margin: 20px;
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Centra el texto dentro de la sección */
+    text-align: center;
 }
 
 #inicio .fraseEntrante {
-    font-size: 1.5em; /* Ajusta el tamaño de la fuente si lo deseas */
-    font-style: italic; /* Mantén el estilo en cursiva si lo prefieres */
-    margin-top: 20px; /* Opcional: agrega espacio por encima de la frase */
-    margin-bottom: 20px; /* Opcional: agrega espacio por debajo de la frase */
+    font-size: 1.5em;
+    font-style: italic;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-/* Estilo para las secciones de destinos */
 .destino {
     padding: 20px;
     margin: 20px 0;
@@ -92,10 +89,10 @@ section {
 }
 
 .destino img {
-    width: 100%; /* Ajusta la imagen al tamaño del contenedor */
-    max-width: 300px;  /* Limita el tamaño máximo de la imagen */
-    height: auto; /* Mantiene la proporción de la imagen */
-    margin-bottom: 20px; /* Espacio inferior para las imágenes */
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 20px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -118,55 +115,55 @@ section {
     display: inline-block;
     padding: 12px 20px;
     margin-top: 20px;
-    background-color: #2c3e50; /* Color de fondo similar al estilo general */
-    color: white; /* Color del texto */
+    background-color: #2c3e50;
+    color: white;
     text-decoration: none;
-    font-size: 1.2em; /* Tamaño de la fuente */
+    font-size: 1.2em;
     font-weight: 600;
-    border-radius: 5px; /* Bordes redondeados */
+    border-radius: 5px;
     text-align: center;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    border: 2px solid #2c3e50; /* Bordes con color para mayor visibilidad */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil para dar profundidad */
-    width: auto; /* El ancho se ajusta al texto */
-    cursor: pointer; /* Cambia el cursor a tipo puntero */
+    border: 2px solid #2c3e50;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: auto;
+    cursor: pointer;
 }
 
 /* Efecto hover */
 .btn-volver:hover {
-    background-color: white; /* Fondo blanco cuando el cursor pase por encima */
-    color: #2c3e50; /* Cambia el color del texto */
-    transform: scale(1.05); /* Efecto de crecimiento */
+    background-color: white;
+    color: #2c3e50;
+    transform: scale(1.05);
 }
 
-/* Estilo para la clase contenido-destino */
+
 .contenido-destino {
-    width: 90%;               /* Ajusta el ancho al 90% del contenedor */
-    max-width: 1200px;        /* Limita el tamaño máximo */
-    margin: 0 auto;           /* Centra el contenido */
-    padding: 20px;            /* Añade un poco de espacio interior */
-    box-sizing: border-box;   /* Asegura que el padding no rompa el diseño */
-    text-align: center;       /* Centra el texto dentro del contenedor */
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
 }
 
-/* Estilo para las imágenes */
+
 .contenido-destino img {
-    max-width: 100%;           /* Limita el tamaño máximo de la imagen */
-    height: auto;              /* Mantiene la proporción de la imagen */
-    display: block;            /* La imagen es un bloque para centrarla */
-    margin-left: auto;         /* Centra la imagen horizontalmente */
-    margin-right: auto;        /* Centra la imagen horizontalmente */
-    max-height: 400px;         /* Limita la altura máxima de la imagen */
-    margin-bottom: 20px;       /* Añade espacio debajo de la imagen */
+    max-width: 100%;
+    height: auto; 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 400px;
+    margin-bottom: 20px;
 }
 
-/* Estilo para los párrafos dentro de contenido-destino */
+
 .contenido-destino p {
-    text-align: justify;       /* Justifica el texto para mejor distribución */
-    margin: 20px 15px 0;       /* Añade margen superior y márgenes laterales */
+    text-align: justify;
+    margin: 20px 15px 0;
 }
 
-/* Estilos para el pie de página */
+
 footer {
     background-color: #2c3e50;
     color: white;
