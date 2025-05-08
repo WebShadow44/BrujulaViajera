@@ -1,0 +1,140 @@
+/* Estilos generales del body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Encabezado y logo */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 10px 0; /* Ajusta el espacio de arriba y abajo */
+    text-align: center; /* Centra el contenido dentro del header */
+}
+
+header img {
+    width: 50px; /* Tamaño más pequeño del logo */
+    height: auto; /* Mantiene las proporciones del logo */
+    display: inline-block; /* Asegura que el logo se muestre de forma en línea */
+    margin-bottom: 15px; /* Agrega un espacio entre el logo y el título */
+}
+
+header h1 {
+    font-size: 2em;
+    margin-top: 0; /* Elimina el margen superior para alinear el título con el logo */
+    margin-bottom: 0; /* Elimina el margen inferior */
+}
+
+/* Menú de navegación */
+nav {
+    background-color: #34495e;
+    text-align: center;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+/* Efecto hover en los enlaces del menú */
+nav ul li a:hover {
+    color: #ecf0f1;
+}
+
+/* Estilo para las secciones */
+section {
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para la sección de inicio */
+#inicio {
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centra el texto dentro de la sección */
+}
+
+#inicio .fraseEntrante {
+    font-size: 1.5em; /* Ajusta el tamaño de la fuente si lo deseas */
+    font-style: italic; /* Mantén el estilo en cursiva si lo prefieres */
+    margin-top: 20px; /* Opcional: agrega espacio por encima de la frase */
+    margin-bottom: 20px; /* Opcional: agrega espacio por debajo de la frase */
+}
+
+/* Estilo para las secciones de destinos */
+.destino {
+    padding: 20px;
+    margin: 20px 0;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.destino img {
+    width: 100%; /* Ajusta la imagen al tamaño del contenedor */
+    max-width: 300px;  /* Limita el tamaño máximo de la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin-bottom: 20px; /* Espacio inferior para las imágenes */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.destino button {
+    background-color: #2c3e50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.destino button:hover {
+    background-color: #34495e;
+}
+
+/* Estilos para el pie de página */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer a {
+    color: #ecf0f1;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #bdc3c7;
+}
+
+footer address {
+    font-style: normal;
+}
