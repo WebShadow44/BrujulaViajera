@@ -6,10 +6,12 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    line-height: 1.6; /* Mejora la legibilidad del texto */
+    color: #333; /* Color de texto base */
 }
 
 /* Encabezado y logo */
@@ -18,54 +20,90 @@ header {
     color: white;
     padding: 20px 0;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
 }
 
 header img {
-    width: 50px;
+    width: 50px; /* Tamaño original */
     height: auto;
     margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+header img:hover {
+    transform: scale(1.1);
 }
 
 header h1 {
-    font-size: 2em;
+    font-size: 2em; /* Tamaño original */
     margin: 0;
 }
 
 /* Menú de navegación */
 nav {
-    background-color: #34495e;
+    background-color: white;
     text-align: center;
     padding: 12px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    position: sticky; /* Menú pegajoso al hacer scroll */
+    top: 0;
+    z-index: 1000;
 }
 
 nav ul {
     list-style-type: none;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
+    max-width: 960px;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Alinea verticalmente los ítems */
 }
 
 nav ul li {
-    display: inline;
-    margin-right: 25px;
+    margin: 0 18px; /* Margen original */
 }
 
 nav ul li a {
-    color: white;
+    color: #34495e;
     text-decoration: none;
-    font-size: 1.2em;
+    font-size: 1.2em; /* Tamaño original */
+    padding: 10px 0;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px; /* Grosor original */
+    background-color: #f39c12;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
 }
 
 nav ul li a:hover {
-    color: #ecf0f1;
+    color: #f39c12;
 }
 
-/* Estilos para las secciones */
+nav ul li a:hover::after {
+    transform: translateX(0);
+}
+
+/* Estilos para las secciones generales (como la de inicio y las nuevas secciones) */
 section {
-    padding: 30px;
-    margin: 20px;
+    padding: 30px; /* Padding original */
+    margin: 20px auto; /* Margen original, centrado */
     background-color: white;
-    border-radius: 10px;
+    border-radius: 10px; /* Border-radius original */
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    max-width: 1200px; /* Limita el ancho máximo para la mayoría de las secciones */
+    text-align: center; /* Centrar el texto en las secciones generales */
 }
 
 /* Sección de inicio */
@@ -74,126 +112,190 @@ section {
 }
 
 #inicio .fraseEntrante {
-    font-size: 1.6em;
+    font-size: 1.6em; /* Tamaño original */
     font-style: italic;
-    margin: 30px 0;
+    margin: 30px 0; /* Margen original */
 }
 
-/* Estilos de los destinos */
+#inicio p {
+    font-size: 1em; /* Asegurar tamaño de párrafo normal */
+    color: #666;
+}
+
+/* Estilos GENERALES para la clase .destino (usada en peru.html y chile.html como contenedor principal) */
 .destino {
-    padding: 20px;
-    margin: 20px 0;
+    padding: 20px; /* Padding original */
+    margin: 20px auto; /* Margen original */
     background-color: white;
-    border-radius: 8px;
+    border-radius: 8px; /* Border-radius original */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Estilos para las imágenes dentro de los .destino generales (en peru.html y chile.html) */
 .destino img {
     width: 100%;
-    max-width: 320px;
+    max-width: 320px; /* Max-width original */
     height: auto;
     margin-bottom: 20px;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 8px; /* Bordes redondeados para las imágenes */
 }
 
-.destino button {
+/* --- ESTILOS PARA LOS CUADROS DE PAÍSES EN INDEX.HTML --- */
+
+/* Contenedor Flexbox para los cuadros de países en index.html */
+.destinos-principales {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px; /* Espacio original entre los cuadros */
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+/* Estilos ESPECÍFICOS para cada cuadro de país DENTRO de .destinos-principales en index.html */
+.destinos-principales .destino {
+    padding: 20px; /* Padding original */
+    background-color: white;
+    border-radius: 10px; /* Border-radius original */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra original */
+    text-align: center;
+
+    flex: 1 1 300px; /* Base original */
+    max-width: 350px; /* Límite de ancho original */
+    margin: 0; /* Elimina los márgenes verticales que tenía .destino general */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transición para el efecto hover */
+}
+
+/* Efecto al pasar el cursor sobre el CUADRO COMPLETO del país en index.html */
+.destinos-principales .destino:hover {
+    transform: translateY(-5px); /* Se eleva ligeramente */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* La sombra se intensifica */
+    /* NO aplicamos scale aquí para no afectar el layout, translateY y box-shadow dan el efecto de "resaltar" */
+}
+
+/* Estilos ESPECÍFICOS para las imágenes dentro de estos cuadros de país de index.html */
+.destinos-principales .destino img {
+    max-width: 100%;
+    height: 200px; /* Altura fija original */
+    object-fit: cover;
+    border-radius: 8px; /* Border-radius original */
+    margin-bottom: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition: transform 0.3s ease; /* Transición para el efecto hover de la imagen */
+}
+
+/* Efecto al pasar el cursor sobre la IMAGEN DENTRO del cuadro del país en index.html */
+.destinos-principales .destino img:hover {
+    transform: scale(1.05); /* La imagen se expande */
+}
+
+.destinos-principales .destino h3 { /* Cambiado de h2 a h3 para los títulos de destino en index.html */
+    font-size: 1.5em; /* Tamaño original aprox. */
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.destinos-principales .destino p {
+    font-size: 1em; /* Tamaño original aprox. */
+    color: #666;
+    margin-bottom: 15px;
+    min-height: 80px; /* Mantener altura mínima para uniformidad (ajustado un poco más bajo) */
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* Limita el texto a 4 líneas */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Estilos de botones de "Ver más" dentro de los cuadros de destino de index.html */
+.destinos-principales .destino .btn-ver-mas button {
     background-color: #2c3e50;
     color: white;
-    padding: 12px 25px;
+    padding: 12px 25px; /* Padding original */
     border: none;
-    border-radius: 5px;
+    border-radius: 5px; /* Border-radius original */
     cursor: pointer;
-    font-size: 1.1em;
+    font-size: 1.1em; /* Tamaño original */
     transition: background-color 0.3s ease;
 }
 
-.destino button:hover {
+.destinos-principales .destino .btn-ver-mas button:hover {
     background-color: #34495e;
 }
 
-/* Botón "volver" */
+/* Botón "volver" (usado en peru.html, chile.html, etc.) */
 .btn-volver {
     display: inline-block;
-    padding: 12px 25px;
-    margin-top: 30px;
+    padding: 12px 25px; /* Padding original */
+    margin-top: 30px; /* Margen original */
     background-color: #2c3e50;
     color: white;
     text-decoration: none;
-    font-size: 1.2em;
+    font-size: 1.2em; /* Tamaño original */
     font-weight: 600;
     border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .btn-volver:hover {
-    background-color: white;
-    color: #2c3e50;
+    background-color: #f39c12; /* Cambio de color al naranja */
+    color: white; /* Asegura el texto blanco */
     transform: scale(1.05);
 }
 
-/* Contenido de los destinos */
+/* Contenido de los destinos (usado en peru.html y chile.html para el texto principal de cada destino) */
 .contenido-destino {
     width: 90%;
-    max-width: 1200px;
+    max-width: 1000px; /* Un poco más estrecho para legibilidad */
     margin: 0 auto;
-    padding: 20px;
+    padding: 20px; /* Padding original */
     box-sizing: border-box;
-    text-align: center;
+    text-align: center; /* Centra el título, texto justificado abajo */
+}
+.contenido-destino h2 {
+    font-size: 2em; /* Tamaño de título original aprox. */
+    color: #2c3e50;
+    margin-bottom: 20px;
 }
 
+/* Imagen principal dentro de .contenido-destino (en peru.html y chile.html) */
 .contenido-destino img {
     max-width: 100%;
-    height: auto;
+    height: 300px; /* Altura original */
+    object-fit: cover;
     display: block;
     margin: 0 auto;
-    max-height: 400px;
     margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .contenido-destino p {
     text-align: justify;
-    margin: 20px 15px 0;
+    margin: 20px 15px 0; /* Margen original */
+    font-size: 1em; /* Tamaño de párrafo original aprox. */
+    color: #444;
 }
 
-/* Pie de página */
-footer {
-    background-color: #2c3e50;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-
-footer p {
-    margin: 5px 0;
-}
-
-footer a {
-    color: #ecf0f1;
-    text-decoration: none;
-}
-
-footer a:hover {
-    color: #bdc3c7;
-}
-
-footer address {
-    font-style: normal;
-}
-
-/* Agrega estos estilos a tu archivo CSS existente para mejorar el funcionamiento del slider */
-
-/* Agregar estos estilos para el contenedor adicional del slider */
+/* Estilos del Slider (usado en peru.html y chile.html) */
 .slider-container {
-    width: 100%;
+    width: 90%;
     max-width: 900px;
     margin: 0 auto 25px;
     position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Asegurar que el slider ocupe todo el ancho del contenedor */
+/* Contenedor principal del slider (donde van los slides y flechas) */
 .slider {
     width: 100%;
     position: relative;
@@ -202,44 +304,47 @@ footer address {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Mejorar la visualización de las imágenes */
+/* Contenedor de todos los slides dentro del slider */
 .slider .slides {
     display: flex;
     transition: transform 0.5s ease-in-out;
     width: 100%;
 }
 
+/* Cada slide individual dentro del slider */
 .slider .slide {
     flex: 0 0 auto;
-    padding: 0 5px; /* Espacio más equilibrado entre slides */
+    padding: 10px;
+    box-sizing: border-box;
 }
 
+/* Las imágenes dentro de cada slide del slider */
 .slider .slide img {
     width: 100%;
-    height: 200px;
+    height: 200px; /* Altura original */
     object-fit: cover;
     border-radius: 6px;
     transition: transform 0.3s ease;
 }
 
-/* Efecto hover en las imágenes */
+/* Efecto hover en las imágenes del slider */
 .slider .slide img:hover {
     transform: scale(1.05);
 }
 
-/* Mejorar la visibilidad de las flechas */
+/* Estilos de las flechas de navegación del slider */
 .flecha {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 40px;
+    width: 40px; /* Tamaño original */
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
-    font-size: 1.5em;
+    font-size: 1.5em; /* Tamaño original */
     border-radius: 50%;
     cursor: pointer;
     z-index: 10;
@@ -259,7 +364,7 @@ footer address {
     right: 10px;
 }
 
-/* Indicadores de posición (puntos) */
+/* Indicadores de posición (puntos) del slider */
 .slider-indicators {
     display: flex;
     justify-content: center;
@@ -267,7 +372,7 @@ footer address {
 }
 
 .indicator {
-    width: 10px;
+    width: 10px; /* Tamaño original */
     height: 10px;
     border-radius: 50%;
     background-color: #ccc;
@@ -280,10 +385,279 @@ footer address {
     background-color: #2c3e50;
 }
 
+.indicator:hover {
+    background-color: #888; /* Color al pasar el mouse */
+}
+
+
+/* --- NUEVOS ESTILOS PARA LAS SECCIONES ADICIONALES DEL INDEX.HTML --- */
+
+/* Estilos para la sección "Sobre Nosotros" */
+#sobre-nosotros p {
+    text-align: justify; /* Alinea el texto a los lados */
+    max-width: 900px; /* Limita el ancho del texto para mejor legibilidad */
+    margin: 20px auto;
+    color: #444;
+}
+
+/* Estilos para la sección "Por Qué Elegirnos" */
+#por-que .ventajas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+    max-width: 1000px; /* Limita el ancho de la cuadrícula */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#por-que .ventaja-item {
+    background-color: #e9f5f9; /* Un color de fondo suave */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#por-que .ventaja-item:hover {
+    transform: translateY(-5px);
+    background-color: #dbeaf0;
+}
+
+#por-que .ventaja-item h3 {
+    color: #2c3e50;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+/* Estilos para íconos (Font Awesome) */
+#por-que .ventaja-item i {
+    font-size: 2.5em;
+    color: #f39c12; /* Color de tu marca */
+    margin-bottom: 15px;
+    display: block; /* Para centrar el ícono */
+}
+
+/* Estilos para la sección "Testimonios" */
+#testimonios .testimonios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+    text-align: left; /* Alinea el texto de cada testimonio a la izquierda */
+    max-width: 1000px; /* Limita el ancho de la cuadrícula */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#testimonios .testimonio {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-left: 5px solid #f39c12; /* Color de tu marca como acento */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#testimonios .testimonio:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+#testimonios .testimonio p {
+    font-style: italic;
+    margin-bottom: 15px;
+    color: #555;
+    text-align: left; /* Asegura que el texto del testimonio esté justificado si no quieres el centro */
+}
+
+#testimonios .testimonio span {
+    display: block;
+    font-weight: bold;
+    color: #2c3e50;
+    text-align: right;
+    font-size: 0.9em;
+}
+
+/* Estilos para la Llamada a la Acción (CTA) */
+#cta-explorar {
+    background-color: #2c3e50; /* Color de fondo oscuro */
+    color: white;
+    padding: 40px 30px; /* Más padding para que destaque */
+    margin: 50px auto; /* Más margen para separarlo */
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    text-align: center; /* ESTILO MOVIDO DESDE EL HTML */
+}
+
+#cta-explorar h2 {
+    color: white; /* Asegura que el título sea blanco */
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+#cta-explorar p {
+    color: #bdc3c7; /* Color de texto más claro */
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+.btn-cta {
+    display: inline-block;
+    background-color: #f39c12; /* Naranja de tu marca */
+    color: white;
+    padding: 15px 35px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-top: 25px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn-cta:hover {
+    background-color: #e67e22; /* Tono más oscuro de naranja */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+
+/* Pie de página (Footer mejorado) */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 30px 20px; /* Padding original */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Espacio original */
+    margin-top: 40px; /* Un poco de margen arriba */
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.95em; /* Ligeramente más pequeño para el texto general */
+}
+
+footer a {
+    color: #f39c12;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #e67e22;
+    text-decoration: underline;
+}
+
+footer strong {
+    color: white;
+}
+
+footer address {
+    font-style: normal;
+    margin-top: 10px;
+    color: #bdc3c7;
+    font-size: 0.9em; /* Ligeramente más pequeño */
+}
+
 /* Responsive */
+/* Ajuste de media query para que los cuadros de país en index.html se apilen solo en pantallas más pequeñas */
+@media (max-width: 992px) {
+    .destinos-principales .destino {
+        flex: 1 1 40%; /* Ajuste para permitir 2 columnas en este rango */
+        max-width: 450px;
+    }
+
+    #por-que .ventajas-grid,
+    #testimonios .testimonios-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Asegurar que se adapten mejor */
+        gap: 20px;
+    }
+}
+
 @media (max-width: 768px) {
+    .destinos-principales {
+        flex-direction: column; /* Apila los cuadros de país verticalmente */
+        align-items: center; /* Centra los cuadros apilados */
+        gap: 20px; /* Espacio entre ellos al apilarse */
+    }
+
+    .destinos-principales .destino {
+        max-width: 90%; /* Ocupa casi todo el ancho disponible */
+    }
+
+    /* **Asegurar el menú de navegación apilado** */
+    nav ul {
+        flex-direction: column; /* ¡APILA LOS ELEMENTOS DEL MENÚ! */
+        align-items: center; /* Centra los ítems apilados */
+    }
+    nav ul li {
+        margin: 5px 0; /* Ajusta el margen cuando los elementos están apilados */
+        width: 100%; /* Ocupa todo el ancho disponible */
+        text-align: center;
+    }
+    nav ul li a {
+        padding: 8px 0; /* Padding original */
+        font-size: 1em; /* Ajuste para móviles */
+        border-bottom: 1px solid #eee; /* Separador sutil entre ítems */
+    }
+    nav ul li:last-child a {
+        border-bottom: none; /* Quita el borde del último elemento */
+    }
+
+    /* Resto de estilos responsive existentes */
     .slider-container {
         max-width: 600px;
+    }
+
+    header h1 {
+        font-size: 1.8em; /* Ajuste de tamaño */
+    }
+
+    #inicio .fraseEntrante {
+        font-size: 1.4em; /* Ajuste de tamaño */
+    }
+
+    section {
+        padding: 25px; /* Un poco menos de padding */
+        margin: 15px auto;
+    }
+
+    .contenido-destino {
+        padding: 20px;
+    }
+    .contenido-destino img {
+        height: 250px; /* Ajuste de altura */
+    }
+
+    .btn-volver {
+        padding: 10px 20px;
+        font-size: 1.1em;
+        margin-top: 25px;
+    }
+
+    footer {
+        padding: 25px 15px;
+    }
+
+    /* Ajustes responsive para las nuevas secciones */
+    #por-que .ventajas-grid,
+    #testimonios .testimonios-grid {
+        grid-template-columns: 1fr; /* Apila los elementos en una sola columna */
+        gap: 15px;
+    }
+
+    #cta-explorar h2 {
+        font-size: 1.6em;
+    }
+    .btn-cta {
+        padding: 12px 30px;
+        font-size: 1.1em;
     }
 }
 
@@ -291,10 +665,50 @@ footer address {
     .slider-container {
         max-width: 300px;
     }
-    
+
     .flecha {
         width: 30px;
         height: 30px;
         font-size: 1.2em;
     }
+
+    header h1 {
+        font-size: 1.6em;
+    }
+    nav ul li a {
+        font-size: 0.9em; /* Más pequeño para móviles muy estrechos */
+    }
+    #inicio .fraseEntrante {
+        font-size: 1.2em;
+    }
+    .destinos-principales .destino {
+        padding: 15px; /* Menos padding en móviles muy pequeños */
+    }
+    .destinos-principales .destino img {
+        height: 160px; /* Ajuste para móviles muy pequeños */
+    }
+    .destinos-principales .destino p {
+        min-height: 70px; /* Reducir aún más el min-height */
+        -webkit-line-clamp: 3; /* Limitar a 3 líneas en pantallas muy pequeñas */
+    }
+
+    .contenido-destino h2 {
+        font-size: 1.6em;
+    }
+    .contenido-destino img {
+        height: 180px;
+    }
+
+    #cta-explorar h2 {
+        font-size: 1.4em;
+    }
+    .btn-cta {
+        padding: 10px 25px;
+        font-size: 1em;
+    }
+}
+
+/* Regla para transiciones de vista entre páginas */
+@view-transition {
+  navigation: auto;
 }
