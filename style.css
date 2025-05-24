@@ -639,13 +639,11 @@ footer address {
     section {
         padding: 25px; /* Un poco menos de padding */
         margin: 15px auto;
-        /* ***** SOLUCIÓN APLICADA AQUÍ ***** */
         scroll-margin-top: 80px; /* Ajuste si el menú es más pequeño en móviles */
     }
 
     .contenido-destino {
         padding: 20px;
-        /* ***** SOLUCIÓN APLICADA AQUÍ TAMBIÉN ***** */
         scroll-margin-top: 80px; /* Ajuste para móviles */
     }
     .contenido-destino img {
@@ -725,16 +723,13 @@ footer address {
     }
 
     section {
-        /* ***** SOLUCIÓN APLICADA AQUÍ ***** */
-        scroll-margin-top: 70px; /* Otro ajuste si es necesario para pantallas muy pequeñas */
+        scroll-margin-top: 70px;
     }
     .contenido-destino {
-        /* ***** SOLUCIÓN APLICADA AQUÍ TAMBIÉN ***** */
-        scroll-margin-top: 70px; /* Otro ajuste si es necesario para pantallas muy pequeñas */
+        scroll-margin-top: 70px;
     }
     .destino {
-        /* ***** SOLUCIÓN APLICADA AQUÍ TAMBIÉN ***** */
-        scroll-margin-top: 70px; /* Otro ajuste si es necesario para pantallas muy pequeñas */
+        scroll-margin-top: 70px;
     }
 }
 
